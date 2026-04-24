@@ -1,5 +1,7 @@
 # go-gateway
 
+## Requisitos Funcionais
+
 | ID       | Requisito                                | Descrição                                                                                                                                                                                     |
 | -------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **RF01** | **Reverse Proxy**                        | O gateway deve interceptar requisições HTTP e encaminhá-las para os microserviços de destino correspondentes.                                                                                 |
