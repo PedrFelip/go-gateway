@@ -9,18 +9,18 @@ import (
  server:
   port: 1234
 
-  routes:
-    - path:
-      target:
-      protected: false
-      rate_limit:
+routes:
+  - path:
+    target:
+    protected: false
+    rate_limit:
 */
 type Config struct {
-	Server Port    `yaml:"server"`
+	Server ServerConfig    `yaml:"server"`
 	Routes []Route `yaml:"routes"`
 }
 
-type Port struct {
+type ServerConfig struct {
 	Port int `yaml:"port"`
 }
 
@@ -31,10 +31,10 @@ type Route struct {
 	RateLimit int    `yaml:"rate_limit"`
 }
 
-func LoadConfig(path []byte) (*Config, error) {
+func LoadConfig(yamlBytes []byte) (*Config, error) {
 	var config Config
 	// Se a estrutura do YAML for inválida, retorna o erro.
-	if err := yaml.Unmarshal(path, &config); err != nil {
+	if err := yaml.Unmarshal(yamlBytes, &config); err != nil {
 		return nil, err
 	}
 	return &config, nil
