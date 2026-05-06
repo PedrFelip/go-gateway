@@ -2,12 +2,12 @@ server:
   port: 8080
 
 routes:
-  - path: "/api/v1/users"
-    target: "http://:3000"
-    protected: true # Requer autenticação
+  - path: "/api/v1/users/*"
+    target: "http://express:3000"
+    protected: true
     rate_limit: 100
 
   - path: "/api/v1/posts"
-    target: "http://:8081"
-    protected: false # vai ser um serviço público
+    target: "http://express:3001"
+    protected: false
     rate_limit: 50
