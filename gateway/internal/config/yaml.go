@@ -16,8 +16,8 @@ routes:
     rate_limit:
 */
 type Config struct {
-	Server ServerConfig    `yaml:"server"`
-	Routes []Route `yaml:"routes"`
+	Server ServerConfig `yaml:"server"`
+	Routes []Route      `yaml:"routes"`
 }
 
 type ServerConfig struct {
